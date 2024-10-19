@@ -11,5 +11,20 @@ Our team is developing an advanced underwater vehicle designed for operation ins
 ○ Yaw (rotation around the vertical axis)
 ○ Roll (rotation around the longitudinal axis)
 2. **Extended Underwater Operation**: The vehicle is capable of staying submergedfor more than 5 minutes, allowing for prolonged underwater tasks andexploration.
+3. **Underwater Mapping**: Equipped with sensors and imaging capabilities, the robotcan perform underwater mapping, providing valuable data about the submergedenvironment.
+
+### Underwater Vehicle Control System
+![Under_Water_Vehicle 1](https://github.com/user-attachments/assets/aa94af0c-facf-407e-80cf-7571781d4e8f)
+                                  Fig. System level wiring diagram
+A comprehensive illustration of the system's electrical connections and component
+layout is provided in Figure , titled "System-Level Wiring Diagram."
+The proposed underwater vehicle system consists of two primary components: asurface-level floating station and a submersible vehicle. The floating station serves asthe communication interface, receiving radio frequency (RF) signals via an RC receiver.These signals are then processed as follows:
+1. The RC receiver captures SBUS signals from the radio transmitter.
+2. An ESP32 microcontroller, designated as the transmitter-side unit, receives anddecodes the SBUS signals, converting them into Pulse Width Modulation (PWM)signals.
+3. The decoded PWM signals are transmitted via a CAT6 Ethernet cable to asecond ESP32 microcontroller, designated as the receiver-side unit, locatedwithin the submersible vehicle.
+4. The receiver-side ESP32 interprets the incoming PWM signals and distributesthem to the appropriate Bidirectional Electronic Speed Controllers (ESCs).
+5. The Bidirectional ESCs regulate the rotation of the underwater thrusters, therebycontrolling the vehicle's movement and orientation.
+
+
 
 
